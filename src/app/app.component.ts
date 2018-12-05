@@ -11,7 +11,8 @@ import PrintJS from 'print-js';
 export class AppComponent implements OnInit {
 
   title = 'app-print';
-  numInvoice: number;
+  NUM_INVOICE: string;
+  DATE: string;
 
 
 
@@ -26,9 +27,9 @@ export class AppComponent implements OnInit {
   }
 
   print(): void {
-    this.numInvoice =5678;
     let printContents, popupWin;
     printContents = document.getElementById('print-section').innerHTML;
+    printContents = printContents.replace('|NUM_INVOICE|', 12345);
     popupWin = window.open('', '_blank', 'top=0,left=0,height=100%,width=auto');
     popupWin.document.open();
     popupWin.document.write(`
