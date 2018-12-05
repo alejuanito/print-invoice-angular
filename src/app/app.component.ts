@@ -17,7 +17,6 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit() {
-    this.numInvoice = 5678;
   }
 
 
