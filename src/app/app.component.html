@@ -1,67 +1,118 @@
-<!--The content below is only a placeholder and can be replaced.-->
-
-<div id="print-section"  hidden>    
-  <div class="invoice-box">
-    <table cellpadding="0" cellspacing="0">
-      <tbody>
-        <tr class="top">
-          <td colspan="2">
-            <table>
-              <tbody>
-                <tr>
-                  <td class="title"> <img src="http://nextstepwebs.com/images/logo.png" style="width:100%; max-width:300px;">
-                  </td>
-                  <td> Invoice #: |NUM_INVOICE|<br> Created: |DATE|<br> Due: February 1, 2015 </td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-        </tr>
-        <tr class="information">
-          <td colspan="2">
-            <table>
-              <tbody>
-                <tr>
-                  <td> Next Step Webs, Inc.<br> 12345 Sunny Road<br> Sunnyville, TX 12345 </td>
-                  <td> Acme Corp.<br> John Doe<br> john@example.com </td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-        </tr>
-        <tr class="heading">
-          <td> Payment Method </td>
-          <td> Check # </td>
-        </tr>
-        <tr class="details">
-          <td> Check </td>
-          <td> 1000 </td>
-        </tr>
-        <tr class="heading">
-          <td> Item </td>
-          <td> Price </td>
-        </tr>
-        <tr class="item">
-          <td> Website design </td>
-          <td> 300 </td>
-        </tr>
-        <tr class="item">
-          <td> Hosting (3 months) </td>
-          <td> 75 </td>
-        </tr>
-        <tr class="item last">
-          <td> Domain name (1 year) </td>
-          <td> 10 </td>
-        </tr>
-        <tr class="total">
-          <td></td>
-          <td> Total: $385.00 </td>
-        </tr>
-      </tbody>
-    </table>
+<div id="print-section" hidden>    
+    <div class="invoice-box">
+      <img class="logo-company" src="https://s3.amazonaws.com/clientes.files/logo/20603422806.png">
+      <table cellpadding="0" cellspacing="0" style="margin-top: -60px;">
+        <tbody>
+          <tr class="top">
+            <td colspan="4">
+              <table>
+                <tbody>
+                  <tr>                                     
+                    <td class="company-data" style="text-align: center; vertical-align: middle;"> <strong>PERUFACT<br> COMPAÑIA PERUANA DE INVESTIGACION & DESARROLLO
+                      TECNOLOGICO S.A.C.</strong><br><label style="font-size: 14px;"> AV. MAGDALENA 5512 <br> LIMA - LIMA - LIMA </label></td>
+                    <td id="border-document" style="text-align: center; vertical-align: middle;"> 
+                        <table >
+                            <tbody>                            
+                              <tr><td style="text-align: center">RUC: 20603422806</td></tr>
+                              <tr class="name-invoice"><td style="text-align: center">FACTURA ELECTRÓNICA</td></tr>
+                              <tr><td style="text-align: center">FC01-12</td></tr>
+                            </tbody>
+                        </table>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr class="information">
+            <td colspan="4">
+              <table>
+                <tbody style="font-size: 14px;">
+                  <tr>
+                    <td class="client-data"> RUC: 20521586134<br> CLIENTE: EVERIS PERU SOCIEDAD ANONIMA CERRADA<br> DIRECCIÓN: JR. ANTONIO MIRO QUESADA NRO. 139 URB. LIMA CERCADO </td>
+                    <td> FECHA EMISIÓN: 24/11/2018<br> HORA: 11:36:32 AM<br> F.VENCIMIENTO: 24/11/2018
+                      <br> OC: 093382822<br> MONEDA: PEN</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table style="margin-top: -35px;">
+          <tbody style="font-size: 13px;">
+          <!--<tr class="heading">
+            <td> Payment Method </td>
+            <td> Check # </td>
+          </tr>
+          <tr class="details">
+            <td> Check </td>
+            <td> 1000 </td>
+          </tr>
+          -->
+          <tr class="heading">
+            <td class="head-description"> DESCRIPCIÓN </td>
+            <td class="head-quantity"> CANTIDAD </td>
+            <td class="head-price"> PRECIO </td>
+            <td class="head-total"> IMPORTE TOTAL </td>
+          </tr>
+          <tr class="item">
+            <td class="description"> Website design </td>
+            <td class="quantity"> 2 </td>
+            <td class="price"> 20.00 </td>
+            <td class="total"> 40.00 </td>
+          </tr>
+          <tr class="item">
+            <td class="description"> Balde kaba </td>
+            <td class="quantity"> 20 </td>
+            <td class="price"> 20.00 </td>
+            <td class="total"> 400.00 </td>
+          </tr>
+          <tr class="item">
+            <td class="description"> Website design </td>
+            <td class="quantity"> 2 </td>
+            <td class="price"> 200.00 </td>
+            <td class="total"> 40000.00 </td>
+          </tr> 
+        </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" style="margin-top: 10px;">
+        <tbody>       
+          <tr class="total">   
+            <td >&nbsp; </td>
+            <td style="width: 40% ;" id="border-total"> OP. GRATUITA: PEN 385.00 <br> OP. EXONERADA: PEN 385.00 <br> OP. INAFECTA: PEN 385.00 
+              <br> OP. GRABADA: PEN 385.00 <br> IGV: PEN 385.00 <br>TOTAL A PAGAR: PEN 385.00
+            </td>
+          </tr>
+          <tr style="font-size: 14px;">   
+            <td >SON: CERO CON 00/100 SOLES. </td>
+          </tr>
+          <tr style="font-size: 14px;">   
+            <td >COMPROBANTE DE PRUEBA SIN VALOR </td>
+          </tr>
+        </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0">
+        <tbody style="font-size: 13px;">
+          <tr class="qr">
+            <td colspan="4">
+              <table>
+                <tbody>
+                  <tr>
+                    <td > 
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/220px-QR_code_for_mobile_English_Wikipedia.svg.png">
+                      <br> REPRESENTACIÓN IMPRESA DE LA NOTA DE CRÉDITO ELECTRÓNICA
+                      <br> Puede consultar este documento en consulta.perufact.pe
+                      <br> GRACIAS POR SU PREFERENCIA
+                    </td>                  
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>    
+    </div>
   </div>
-</div>
-
 
 <div>
 <button (click)="print()">print</button>

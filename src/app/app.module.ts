@@ -4,6 +4,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { BsModalModule } from 'ng2-bs3-modal';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import { NgxQRCodeModule } from 'ngx-qrcode2';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import {MatButtonModule, MatCheckboxModule} from '@angular/material';
     BrowserModule,
     BrowserAnimationsModule,
     BsModalModule,
-    MatButtonModule, MatCheckboxModule
+    MatButtonModule, MatCheckboxModule,
+    NgxQRCodeModule
   ],
   providers: [],
   schemas: [ NO_ERRORS_SCHEMA ],

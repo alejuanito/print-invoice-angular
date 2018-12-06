@@ -1,7 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <html>
         <head>
-          <title>Print tab</title>
+          <title>Comprobante electrónico</title>
           <style>
             .invoice-box{
               max-width:800px;
@@ -29,10 +29,7 @@
           .invoice-box table tr td:nth-child(2){
               text-align:right;
           }
-          
-          .invoice-box table tr.top table td{
-              padding-bottom:20px;
-          }
+         
           
           .invoice-box table tr.top table td.title{
               font-size:45px;
@@ -50,9 +47,7 @@
               font-weight:bold;
           }
           
-          .invoice-box table tr.details td{
-              padding-bottom:20px;
-          }
+         
           
           .invoice-box table tr.item td{
               border-bottom:1px solid #eee;
@@ -66,6 +61,13 @@
               border-top:2px solid #eee;
               font-weight:bold;
           }
+          .invoice-box table tr.name-invoice{
+            background: #eee;
+            border-bottom: 1px solid #ddd;
+            font-weight: bold;
+            
+          }
+              
           
           @media only screen and (max-width: 600px) {
               .invoice-box table tr.top table td{
@@ -96,6 +98,9 @@
 
           .client-data{
               width: 65% ;
+          }
+          .company-data{
+              width: 62% ;
           }
           .invoice-box table tr.heading td.head-description{
               width: 60% ;
@@ -132,24 +137,42 @@
               text-align:right;
               border-top: 0px !important;
           }
+          .invoice-box table tr.qr td {              
+              text-align:center;              
+          }
+
+          .logo-company {
+            width: 10%;
+            max-width: 300px;
+            position: static;
+            top: 0;
+            right: 950px;
+            max-width:300px;
+          }
  
           </style>
         </head>
       <body>
 <div id="print-section">    
   <div class="invoice-box">
-    <table cellpadding="0" cellspacing="0">
+    <img class="logo-company" src="https://s3.amazonaws.com/clientes.files/logo/20603422806.png">
+    <table cellpadding="0" cellspacing="0" style="margin-top: -60px;">
       <tbody>
         <tr class="top">
           <td colspan="4">
             <table>
               <tbody>
-                <tr>
-                  <td class="title"> <img src="http://nextstepwebs.com/images/logo.png" style="width:100%; max-width:300px;">
-                  </td>
-                  <td style="text-align: center; vertical-align: middle;"> PERUFACT<br> COMPAÑIA PERUANA DE INVESTIGACION & DESARROLLO
-                    TECNOLOGICO S.A.C.<br> AV. MAGDALENA 5512 <br> LIMA - LIMA - LIMA </td>
-                  <td id="border-document" style="text-align: center; vertical-align: middle;"> RUC: 20603422806<br> NOTA DE CRÉDITO ELECTRÓNICA<br> FC01-12 </td>
+                <tr>                                     
+                  <td class="company-data" style="text-align: center; vertical-align: middle;"> <strong>PERUFACT<br> COMPAÑIA PERUANA DE INVESTIGACION & DESARROLLO
+                    TECNOLOGICO S.A.C.</strong><br><label style="font-size: 14px;"> AV. MAGDALENA 5512 <br> LIMA - LIMA - LIMA </label></td>
+                  <td id="border-document" style="text-align: center; vertical-align: middle;"> 
+                      <table >
+                          <tbody>                            
+                            <tr><td style="text-align: center">RUC: 20603422806</td></tr>
+                            <tr class="name-invoice"><td style="text-align: center">FACTURA ELECTRÓNICA</td></tr>
+                            <tr><td style="text-align: center">FC01-12</td></tr>
+                          </tbody>
+                      </table>
                 </tr>
               </tbody>
             </table>
@@ -158,15 +181,20 @@
         <tr class="information">
           <td colspan="4">
             <table>
-              <tbody>
+              <tbody style="font-size: 14px;">
                 <tr>
                   <td class="client-data"> RUC: 20521586134<br> CLIENTE: EVERIS PERU SOCIEDAD ANONIMA CERRADA<br> DIRECCIÓN: JR. ANTONIO MIRO QUESADA NRO. 139 URB. LIMA CERCADO </td>
-                  <td> FECHA EMISIÓN: 24/11/2018<br> HORA: 11:36:32 AM<br> F.VENCIMIENTO: 24/11/2018<br> OC: 093382822</td>
+                  <td> FECHA EMISIÓN: 24/11/2018<br> HORA: 11:36:32 AM<br> F.VENCIMIENTO: 24/11/2018
+                    <br> OC: 093382822<br> MONEDA: PEN</td>
                 </tr>
               </tbody>
             </table>
           </td>
         </tr>
+      </tbody>
+    </table>
+    <table style="margin-top: -35px;">
+        <tbody style="font-size: 13px;">
         <!--<tr class="heading">
           <td> Payment Method </td>
           <td> Check # </td>
@@ -202,7 +230,7 @@
         </tr> 
       </tbody>
     </table>
-    <table cellpadding="0" cellspacing="0" style="margin-top: 40px;">
+    <table cellpadding="0" cellspacing="0" style="margin-top: 10px;">
       <tbody>       
         <tr class="total">   
           <td >&nbsp; </td>
@@ -210,8 +238,34 @@
             <br> OP. GRABADA: PEN 385.00 <br> IGV: PEN 385.00 <br>TOTAL A PAGAR: PEN 385.00
           </td>
         </tr>
+        <tr style="font-size: 14px;">   
+          <td >SON: CERO CON 00/100 SOLES. </td>
+        </tr>
+        <tr style="font-size: 14px;">   
+          <td >COMPROBANTE DE PRUEBA SIN VALOR </td>
+        </tr>
       </tbody>
     </table>
+    <table cellpadding="0" cellspacing="0">
+      <tbody style="font-size: 13px;">
+        <tr class="qr">
+          <td colspan="4">
+            <table>
+              <tbody>
+                <tr>
+                  <td > 
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/220px-QR_code_for_mobile_English_Wikipedia.svg.png">
+                    <br> REPRESENTACIÓN IMPRESA DE LA NOTA DE CRÉDITO ELECTRÓNICA
+                    <br> Puede consultar este documento en consulta.perufact.pe
+                    <br> GRACIAS POR SU PREFERENCIA
+                  </td>                  
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>    
   </div>
 </div>
 </body>

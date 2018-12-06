@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   NUM_INVOICE: string;
   DATE: string;
 
-
+  ngxQrcode2 = 'https://www.npmjs.com/package/ngx-qrcode2';
 
   ngOnInit() {
   }
@@ -62,10 +62,7 @@ export class AppComponent implements OnInit {
           .invoice-box table tr td:nth-child(2){
               text-align:right;
           }
-          
-          .invoice-box table tr.top table td{
-              padding-bottom:20px;
-          }
+         
           
           .invoice-box table tr.top table td.title{
               font-size:45px;
@@ -83,9 +80,7 @@ export class AppComponent implements OnInit {
               font-weight:bold;
           }
           
-          .invoice-box table tr.details td{
-              padding-bottom:20px;
-          }
+         
           
           .invoice-box table tr.item td{
               border-bottom:1px solid #eee;
@@ -99,6 +94,13 @@ export class AppComponent implements OnInit {
               border-top:2px solid #eee;
               font-weight:bold;
           }
+          .invoice-box table tr.name-invoice{
+            background: #eee;
+            border-bottom: 1px solid #ddd;
+            font-weight: bold;
+            
+          }
+              
           
           @media only screen and (max-width: 600px) {
               .invoice-box table tr.top table td{
@@ -112,6 +114,73 @@ export class AppComponent implements OnInit {
                   display:block;
                   text-align:center;
               }
+
+              
+          }
+
+          #border-document {
+              border: 2px solid #F0F0F0;
+              padding: 10px;
+              border-radius: 25px;
+          }
+          #border-total {
+              border: 2px solid #F0F0F0;
+              padding: 10px;
+              border-radius: 25px;
+          }
+
+          .client-data{
+              width: 65% ;
+          }
+          .company-data{
+              width: 62% ;
+          }
+          .invoice-box table tr.heading td.head-description{
+              width: 60% ;
+              text-align:center;
+          }
+          .invoice-box table tr.heading td.head-quantity{
+              width: 5% ;
+              text-align:center;
+          }
+          .invoice-box table tr.heading td.head-price{
+              width: 15% ;
+              text-align:center;
+          }
+          .invoice-box table tr.heading td.head-total{
+              width: 20% ;
+              text-align:center;
+          }
+          .invoice-box table tr.item td.description{
+              width: 60% ;
+          }
+          .invoice-box table tr.item td.quantity{
+              width: 5% ;
+              text-align:center;
+          }
+          .invoice-box table tr.item td.price{
+              width: 15% ;
+              text-align:right;
+          }
+          .invoice-box table tr.item td.total{
+              width: 20% ;
+              text-align:right;
+          }
+          .invoice-box table tr.total td {              
+              text-align:right;
+              border-top: 0px !important;
+          }
+          .invoice-box table tr.qr td {              
+              text-align:center;              
+          }
+
+          .logo-company {
+            width: 10%;
+            max-width: 300px;
+            position: static;
+            top: 0;
+            right: 950px;
+            max-width:300px;
           }
  
           </style>
