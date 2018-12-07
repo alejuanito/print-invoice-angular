@@ -1,4 +1,4 @@
-<!-- <div id="print-section" hidden>    
+<div id="print-section" hidden>    
     <div class="invoice-box">
       <div id="content-img" style="position: relative;">
         {{invoice.logotop}}
@@ -46,7 +46,15 @@
       </table>
       <table style="margin-top: -35px; line-height: 15px;">
           <tbody style="font-size: 13px;">
-          
+          <!--<tr class="heading">
+            <td> Payment Method </td>
+            <td> Check # </td>
+          </tr>
+          <tr class="details">
+            <td> Check </td>
+            <td> 1000 </td>
+          </tr>
+          -->
           <tr class="heading">
             <td class="head-description"> DESCRIPCIÓN </td>
             <td class="head-quantity"> CANTIDAD </td>
@@ -98,8 +106,5 @@
         </tbody>
       </table>    
     </div>
-  </div> -->
-<app-report></app-report>
-<div>
-<button (click)="print()">print</button>
-</div>
+  </div>
+

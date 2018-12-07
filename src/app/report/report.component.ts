@@ -3,21 +3,41 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import PrintJS from 'print-js';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-report',
+  templateUrl: './report.component.html'
 })
 
-export class AppComponent implements OnInit {
+export class ReportComponent implements OnInit {
 
   title = 'app-print';
   NUM_INVOICE: string;
   DATE: string;
   invoice: any = [];
-  //items: any = [];
   qrInvoice = '123|3432|324kj|4rrr';
 
   ngOnInit() {
+    this.invoice = {"serieCorrelative":null,"issueDate":"2018-12-06","referenceDate":"2018-12-06","typeDocument":"01",
+    "currency":"PEN","subTotal":8310.02,"subTotalString":"8310.02","igv":1495.80,"igvString":"1495.80",
+    "total":9805.82,"totalString":"9805.82",
+    "supplier":{"numberDocument":"20603422806","typeDocument":0,"nameLegal":" ","nameCommercial":"INKAS DEV","email":null},
+    "customer":{"numberDocument":"20603422806","typeDocument":6,
+        "nameLegal":"COMPAÑIA PERUANA DE INVESTIGACION & DESARROLLO TECNOLOGICO S.A.C.","nameCommercial":"COMPAÑIA PERUANA DE INVESTIGACION & DESARROLLO TECNOLOGICO S.A.C.","email":null},
+    "items":[
+        {"numberLine":1,"quantity":1,"unitCode":"NIU","nameProduct":"BALDE JOY 13 LL","valueUnit":null,"valueUnitString":null,"priceUnit":7.02,"priceUnitString":"7.02","igvItem":null,"igvItemString":null,"taxName":"IGV","taxValue":null,"codigoTipoAfectacionIGV":"10"},
+        {"numberLine":2,"quantity":10,"unitCode":"NIU","nameProduct":"TAPER G&G CUADRADO C/. REJILLA 1.6 LT","valueUnit":null,"valueUnitString":null,"priceUnit":10.68,"priceUnitString":"10.68","igvItem":null,"igvItemString":null,"taxName":"IGV","taxValue":null,"codigoTipoAfectacionIGV":"10"},
+        {"numberLine":2,"quantity":10,"unitCode":"NIU","nameProduct":"TAPER G&G CUADRADO C/. REJILLA 1.6 LT","valueUnit":null,"valueUnitString":null,"priceUnit":10.68,"priceUnitString":"10.68","igvItem":null,"igvItemString":null,"taxName":"IGV","taxValue":null,"codigoTipoAfectacionIGV":"10"},
+        {"numberLine":2,"quantity":10,"unitCode":"NIU","nameProduct":"TAPER G&G CUADRADO C/. REJILLA 1.6 LT","valueUnit":null,"valueUnitString":null,"priceUnit":10.68,"priceUnitString":"10.68","igvItem":null,"igvItemString":null,"taxName":"IGV","taxValue":null,"codigoTipoAfectacionIGV":"10"},
+        {"numberLine":2,"quantity":10,"unitCode":"NIU","nameProduct":"TAPER G&G CUADRADO C/. REJILLA 1.6 LT","valueUnit":null,"valueUnitString":null,"priceUnit":10.68,"priceUnitString":"10.68","igvItem":null,"igvItemString":null,"taxName":"IGV","taxValue":null,"codigoTipoAfectacionIGV":"10"},
+        {"numberLine":2,"quantity":10,"unitCode":"NIU","nameProduct":"TAPER G&G CUADRADO C/. REJILLA 1.6 LT","valueUnit":null,"valueUnitString":null,"priceUnit":10.68,"priceUnitString":"10.68","igvItem":null,"igvItemString":null,"taxName":"IGV","taxValue":null,"codigoTipoAfectacionIGV":"10"},
+        {"numberLine":2,"quantity":10,"unitCode":"NIU","nameProduct":"TAPER G&G CUADRADO C/. REJILLA 1.6 LT","valueUnit":null,"valueUnitString":null,"priceUnit":10.68,"priceUnitString":"10.68","igvItem":null,"igvItemString":null,"taxName":"IGV","taxValue":null,"codigoTipoAfectacionIGV":"10"},
+        {"numberLine":2,"quantity":10,"unitCode":"NIU","nameProduct":"TAPER G&G CUADRADO C/. REJILLA 1.6 LT","valueUnit":null,"valueUnitString":null,"priceUnit":10.68,"priceUnitString":"10.68","igvItem":null,"igvItemString":null,"taxName":"IGV","taxValue":null,"codigoTipoAfectacionIGV":"10"},
+        {"numberLine":2,"quantity":10,"unitCode":"NIU","nameProduct":"TAPER G&G CUADRADO C/. REJILLA 1.6 LT","valueUnit":null,"valueUnitString":null,"priceUnit":10.68,"priceUnitString":"10.68","igvItem":null,"igvItemString":null,"taxName":"IGV","taxValue":null,"codigoTipoAfectacionIGV":"10"},
+        {"numberLine":2,"quantity":10,"unitCode":"NIU","nameProduct":"TAPER G&G CUADRADO C/. REJILLA 1.6 LT","valueUnit":null,"valueUnitString":null,"priceUnit":10.68,"priceUnitString":"10.68","igvItem":null,"igvItemString":null,"taxName":"IGV","taxValue":null,"codigoTipoAfectacionIGV":"10"},
+        {"numberLine":3,"quantity":100,"unitCode":"NIU","nameProduct":"CAJA ORGANIZADORA DE USO PESADO BUNKER 1","valueUnit":null,"valueUnitString":null,"priceUnit":96.92,"priceUnitString":"96.92","igvItem":null,"igvItemString":null,"taxName":"IGV","taxValue":null,"codigoTipoAfectacionIGV":"10"}],
+        "serie":"F421","correlative":7,"originClient":"API","issueTime":"23:14",
+        "invoiceName":"FACTURA DE  VENTA ELECTRÓNICA","address":"LIMA","cashier":"prueba","posName":"PV LIMA 01",
+        "totalLetter":"NUEVE MIL OCHOCIENTOS CINCO 82/100 SOLES.","isProduction":false,"status":"06",
+        "logoWidth": "20%", "logoTop": "-20", "logoLeft": "0"};
   }
 
 
@@ -28,28 +48,7 @@ export class AppComponent implements OnInit {
 
   print(): void {
 
-    this.invoice = {"serieCorrelative":null,"issueDate":"2018-12-06","referenceDate":"2018-12-06","typeDocument":"01",
-                    "currency":"PEN","subTotal":8310.02,"subTotalString":"8310.02","igv":1495.80,"igvString":"1495.80",
-                    "total":9805.82,"totalString":"9805.82",
-                    "supplier":{"numberDocument":"20603422806","typeDocument":0,"nameLegal":" ","nameCommercial":"INKAS DEV","email":null},
-                    "customer":{"numberDocument":"20603422806","typeDocument":6,
-                        "nameLegal":"COMPAÑIA PERUANA DE INVESTIGACION & DESARROLLO TECNOLOGICO S.A.C.","nameCommercial":"COMPAÑIA PERUANA DE INVESTIGACION & DESARROLLO TECNOLOGICO S.A.C.","email":null},
-                    "items":[
-                        {"numberLine":1,"quantity":1,"unitCode":"NIU","nameProduct":"BALDE JOY 13 LL","valueUnit":null,"valueUnitString":null,"priceUnit":7.02,"priceUnitString":"7.02","igvItem":null,"igvItemString":null,"taxName":"IGV","taxValue":null,"codigoTipoAfectacionIGV":"10"},
-                        {"numberLine":2,"quantity":10,"unitCode":"NIU","nameProduct":"TAPER G&G CUADRADO C/. REJILLA 1.6 LT","valueUnit":null,"valueUnitString":null,"priceUnit":10.68,"priceUnitString":"10.68","igvItem":null,"igvItemString":null,"taxName":"IGV","taxValue":null,"codigoTipoAfectacionIGV":"10"},
-                        {"numberLine":2,"quantity":10,"unitCode":"NIU","nameProduct":"TAPER G&G CUADRADO C/. REJILLA 1.6 LT","valueUnit":null,"valueUnitString":null,"priceUnit":10.68,"priceUnitString":"10.68","igvItem":null,"igvItemString":null,"taxName":"IGV","taxValue":null,"codigoTipoAfectacionIGV":"10"},
-                        {"numberLine":2,"quantity":10,"unitCode":"NIU","nameProduct":"TAPER G&G CUADRADO C/. REJILLA 1.6 LT","valueUnit":null,"valueUnitString":null,"priceUnit":10.68,"priceUnitString":"10.68","igvItem":null,"igvItemString":null,"taxName":"IGV","taxValue":null,"codigoTipoAfectacionIGV":"10"},
-                        {"numberLine":2,"quantity":10,"unitCode":"NIU","nameProduct":"TAPER G&G CUADRADO C/. REJILLA 1.6 LT","valueUnit":null,"valueUnitString":null,"priceUnit":10.68,"priceUnitString":"10.68","igvItem":null,"igvItemString":null,"taxName":"IGV","taxValue":null,"codigoTipoAfectacionIGV":"10"},
-                        {"numberLine":2,"quantity":10,"unitCode":"NIU","nameProduct":"TAPER G&G CUADRADO C/. REJILLA 1.6 LT","valueUnit":null,"valueUnitString":null,"priceUnit":10.68,"priceUnitString":"10.68","igvItem":null,"igvItemString":null,"taxName":"IGV","taxValue":null,"codigoTipoAfectacionIGV":"10"},
-                        {"numberLine":2,"quantity":10,"unitCode":"NIU","nameProduct":"TAPER G&G CUADRADO C/. REJILLA 1.6 LT","valueUnit":null,"valueUnitString":null,"priceUnit":10.68,"priceUnitString":"10.68","igvItem":null,"igvItemString":null,"taxName":"IGV","taxValue":null,"codigoTipoAfectacionIGV":"10"},
-                        {"numberLine":2,"quantity":10,"unitCode":"NIU","nameProduct":"TAPER G&G CUADRADO C/. REJILLA 1.6 LT","valueUnit":null,"valueUnitString":null,"priceUnit":10.68,"priceUnitString":"10.68","igvItem":null,"igvItemString":null,"taxName":"IGV","taxValue":null,"codigoTipoAfectacionIGV":"10"},
-                        {"numberLine":2,"quantity":10,"unitCode":"NIU","nameProduct":"TAPER G&G CUADRADO C/. REJILLA 1.6 LT","valueUnit":null,"valueUnitString":null,"priceUnit":10.68,"priceUnitString":"10.68","igvItem":null,"igvItemString":null,"taxName":"IGV","taxValue":null,"codigoTipoAfectacionIGV":"10"},
-                        {"numberLine":2,"quantity":10,"unitCode":"NIU","nameProduct":"TAPER G&G CUADRADO C/. REJILLA 1.6 LT","valueUnit":null,"valueUnitString":null,"priceUnit":10.68,"priceUnitString":"10.68","igvItem":null,"igvItemString":null,"taxName":"IGV","taxValue":null,"codigoTipoAfectacionIGV":"10"},
-                        {"numberLine":3,"quantity":100,"unitCode":"NIU","nameProduct":"CAJA ORGANIZADORA DE USO PESADO BUNKER 1","valueUnit":null,"valueUnitString":null,"priceUnit":96.92,"priceUnitString":"96.92","igvItem":null,"igvItemString":null,"taxName":"IGV","taxValue":null,"codigoTipoAfectacionIGV":"10"}],
-                        "serie":"F421","correlative":7,"originClient":"API","issueTime":"23:14",
-                        "invoiceName":"FACTURA DE  VENTA ELECTRÓNICA","address":"LIMA","cashier":"prueba","posName":"PV LIMA 01",
-                        "totalLetter":"NUEVE MIL OCHOCIENTOS CINCO 82/100 SOLES.","isProduction":false,"status":"06",
-                        "logoWidth": "20%", "logoTop": "-20", "logoLeft": "0"};
+    
       setTimeout(() => { 
         let printContents, popupWin;
         printContents = document.getElementById('print-section').innerHTML;

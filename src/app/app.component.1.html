@@ -141,22 +141,16 @@
               text-align:center;              
           }
 
-          .logo-company {
-            width: 10%;
-            max-width: 300px;
-            position: fixed;
-            top: 50;
-            right: 1180px;
-            max-width:300px;
-          }
  
           </style>
         </head>
       <body>
 <div id="print-section">    
   <div class="invoice-box">
-    <img class="logo-company" src="https://s3.amazonaws.com/clientes.files/logo/20603422806.png">
-    <table cellpadding="0" cellspacing="0" style="margin-top: 40px;">
+    <div id="content-img" style="position: relative;">
+      <img class="logo-company"  style="position: absolute; top: -20px; left: 0px; width: 10%;" src="https://s3.amazonaws.com/clientes.files/logo/10311255024.png">
+    </div>
+    <table cellpadding="0" cellspacing="0" style="margin-top: 20px;">
       <tbody>
         <tr class="top">
           <td colspan="4">
@@ -193,7 +187,7 @@
         </tr>
       </tbody>
     </table>
-    <table style="margin-top: -35px;">
+    <table style="margin-top: -35px; line-height: 15px;">
         <tbody style="font-size: 13px;">
         <!--<tr class="heading">
           <td> Payment Method </td>
